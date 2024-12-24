@@ -4,16 +4,24 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-body {
-  background-color: rgb(56, 73, 51);
-  overflow-x: hidden;
+:root {
+  --main-bg-color: rgb(56, 73, 51);
+  --white-color: white;
+  --pink-color: pink;
+  --dark-bg: rgb(40, 39, 39);
+  --text-bg: rgb(203, 200, 200);
+  --text-spotify: rgb(86, 144, 86);
 }
+body {
+  background-color: var(--main-bg-color);
+  font-family: Poppins, sans-serif;
+}
+
 li a {
-  color: rgb(86, 144, 86);
+  color: var(--text-spotify);
 }
 header {
-  background-color: rgb(40, 39, 39);
-  color: white;
+  background-color: var(--dark-bg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,51 +31,65 @@ header {
 li {
   list-style: none;
   font-size: 20px;
-  font-family: Poppins;
   text-align: center;
 }
 header h1 {
-  color: rgb(178, 198, 179);
+  color: var(--text-bg);
   font-size: 40px;
   text-align: center;
 }
 footer {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
   text-align: center;
-  background-color: rgb(40, 39, 39);
-  color: rgb(203, 200, 200);
+  background-color: var(--dark-bg);
+  color: var(--text-bg);
   padding: 10px;
-}
-span {
-  color: white;
-}
-.row1-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   margin-top: 20px;
 }
-.row1-container img {
-  width: 15rem;
-}
+
+.row1-container,
 .row2-container {
   display: flex;
-  align-items: end;
-  justify-content: space-evenly;
-  margin-top: 3rem;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
 }
-.row2-container img {
-  width: 15rem;
-}
-a {
-  color: pink;
+
+.music {
+  color: var(--pink-color);
 }
 p {
   text-align: center;
-  font-family: Poppins;
+  margin-top: 10px;
+}
+span {
+  color: var(--white-color);
 }
 img {
-  border: 2px solid pink;
+  border: 2px solid var(--pink-color);
+  border-radius: 8px;
+  width: 15rem;
+  transition: transform 0.3s ease-in-out;
+}
+.row1-container div,
+.row2-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.row1-container p,
+.row2-container p {
+  text-align: center;
+  margin-top: 10px;
+}
+.music:hover {
+  color: rgb(13, 31, 7);
+  text-decoration: none;
+}
+
+img:hover {
+  transform: scale(1.05);
 }
