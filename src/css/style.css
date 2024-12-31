@@ -93,3 +93,6 @@ img {
 img:hover {
   transform: scale(1.05);
 }
+.row1-container {
+  padding-left: 2rem;
+}
